@@ -43,6 +43,7 @@ class PlayList {
 
         this.tracks[size] = track;
         this.size++;
+
         return true;
     }
 
@@ -85,6 +86,7 @@ class PlayList {
                 return i;
             }
         }
+
         return -1;
     }
 
@@ -102,9 +104,7 @@ class PlayList {
         for (int j = this.size; j > i; j--) {
             this.tracks[j] = this.tracks[j - 1];
         }
-
         this.tracks[i] = track;
-
         size++;
 
         return true;
@@ -121,9 +121,7 @@ class PlayList {
         for (int j = i; j < this.size - 1; j++) {
             this.tracks[j] = this.tracks[j + 1];
         }
-
         this.tracks[size - 1] = null;
-
         size--;
     }
 
@@ -165,7 +163,6 @@ class PlayList {
 
         int minIndex = start;
         int minDuration = this.tracks[start].getDuration();
-
         for (int i = start + 1; i < this.size; i++) {
             if (this.tracks[i].getDuration() < minDuration) {
                 minDuration = this.tracks[i].getDuration();
