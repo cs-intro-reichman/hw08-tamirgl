@@ -50,12 +50,13 @@ class PlayList {
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder("");
         for (int i = 0; i < this.size; i++) {
-            str += "\n" + this.tracks[i];
+            str.append("\n");
+            str.append(this.tracks[i]);
         }
         
-        return str;
+        return str.toString();
     }
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
